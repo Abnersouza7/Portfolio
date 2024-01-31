@@ -35,10 +35,6 @@ python manage.py runserver
 
 depois disso, abra o navegador e insira o link http://127.0.0.1:8000/ e pronto, agora você tem acesso ao meu curriculo digital
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ecfef7 (README)
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
