@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="home" class="banner-area section-padding">
+        <div class="bg-overlay black"></div>
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="welcome-text">
+                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Certificados</div>
+                        <h1 class="wow fadeInDown red-text" data-wow-delay="0.4s">Minha Carreira.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="certificados" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>Certificados</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for certificate in certificates %}
+                    <div class="col-md-6 col-sm-6">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <h2>{{ certificate.title }}</h2>  
+                            <p>{{ certificate.description }}</p>  
+                            {% if certificate.pdf_file %}
+                                <img src="{{ certificate.pdf_file.url }}" alt="Imagem certificate pessoal">  
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

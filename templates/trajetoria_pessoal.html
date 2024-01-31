@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="home" class="banner-area section-padding">
+        <div class="bg-overlay black"></div>
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="welcome-text">
+                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Trajetória pessoal</div>
+                        <h1 class="wow fadeInDown red-text" data-wow-delay="0.4s">Explorando minha vida.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dados" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>Quem é Abner?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for trajetoria in trajetorias %}
+                    <div class="col-md-6 col-sm-6">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <h2>{{ trajetoria.name }}</h2>  
+                            <p>{{ trajetoria.description }}</p>  
+                            {% if trajetoria.image %}
+                                <img src="{{ trajetoria.image.url }}" alt="Imagem trajetoria pessoal">  
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

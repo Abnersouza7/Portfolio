@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="home" class="banner-area section-padding">
+        <div class="bg-overlay black"></div>
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="welcome-text">
+                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Trajetória profissional</div>
+                        <h1 class="wow fadeInDown" data-wow-delay="0.4s">Descubra minhas experiências.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dads" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>O que eu já fiz?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for trajetoria_profissional in trajetoria_profissional %}
+                    <div class="col-md-6 col-sm-6">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <h2>{{ trajetoria_profissional.title }}</h2>  
+                            <p>{{ trajetoria_profissional.description }}</p>  
+                            {% if trajetoria_profissional.link %}
+                                <a href="{{ trajetoria_profissional.link }}" target="_blank" class="link-trajetoria">Link para mais informações</a>
+                            {% endif %}
+                            {% if trajetoria_profissional.image %}
+                                <img src="{{ trajetoria_profissional.image.url }}" alt="Imagem trajetoria pessoal">  
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

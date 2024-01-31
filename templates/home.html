@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="home" class="banner-area section-padding">
+        <div class="bg-overlay black"></div>
+        <div class="containter">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="welcome-text">
+                        <div class="name-area wow fadeInDown" data-wow-delay="0.2s">Olá meu nome é Abner</div>
+                        <h1 class="wow fadeInDown" data-wow-delay="0.4s">Essa é minha trajetória.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sobre" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center">
+                        <h2>Um pouco do que você verá aqui.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for about_instance in about %}
+                    <div class="col-md-16 col-sm-16">
+                        <div class="single-service wow fadeInDown" data-wow-delay="0.2s">
+                            <h2>{{ about_instance.short_description }}</h2>
+                            <p>{{ about_instance.description }}</p>
+                            {% if about_instance.image %}
+                                <img src="{{ about_instance.image.url }}" alt="Imagem trajetoria pessoal">
+                            {% endif %}                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

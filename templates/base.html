@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Portfolio</title>
+    {% include 'includes/stylesheets.html' %}
+</head>
+<body>
+
+<div class="loader_bg">
+    <span class="loader"></span>
+</div>
+
+<nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/"> RESUME<span>.</span> </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li><a class="smooth-menu" href="{% url 'home' %}">Home</a></li>
+                <li><a class="smooth-menu" href="{% url 'trajetoria_pessoal' %}">Sobre mim</a></li>
+                <li><a class="smooth-menu" href="{% url 'trajetoria_profissional' %}">Experiência e formação</a></li>
+                <li><a href="{% url 'view_certificates' %}">Certificados</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <p>Joinville - Santa Catarina - 2024</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'includes/scripts.html' %}
+
+<script>
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop:true, // Define se o carrossel deve ser em loop (true) ou não (false)
+            margin:1, // Define a margem entre os itens do carrossel
+            nav:false, // Define se os botões de navegação devem ser exibidos (true) ou não (false)
+            autoHeight: true,
+            
+            items:1
+        });
+    });
+</script>
+
+
+</body>
+</html>
