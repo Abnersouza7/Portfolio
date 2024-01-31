@@ -35,13 +35,6 @@ python manage.py runserver
 
 depois disso, abra o navegador e insira o link http://127.0.0.1:8000/ e pronto, agora você tem acesso ao meu curriculo digital
 
-## Suporte
-
-Se você encontrar algum problema ou tiver alguma dúvida, sinta-se à vontade para abrir uma issue neste repositório ou entre em contato com o desenvolvedor em [abnersouza336@gmail.com](mailto:seu-email@example.com).
-
-## Contribuições
-
-Contribuições são bem-vindas! Se desejar contribuir para este projeto, sinta-se à vontade para abrir uma pull request.
 
 ## Licença
 
